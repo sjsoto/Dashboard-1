@@ -1,0 +1,317 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+	<meta charset="utf-8"> 
+	<title>Home - Huntsville</title>    
+	<link rel="shortcut icon" href="favicon.ico">
+	<!--Stylesheets/Javascript links-->
+	<link rel="stylesheet" target="_blank" href="css/style.css" type="text/css" media="screen"> 
+
+	<script src="js/clock.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script src="js/weather.js" type="text/javascript"></script>
+	<style type="text/css"></style>
+	<script src="jquery.mousewheel.js"type="text/javascript"></script>
+		<script>
+	$(function(){
+
+		$("body").mousewheel(function(event, delta) {
+			this.scrollLeft -= (delta * 60);
+			event.preventDefault();
+		});
+	});
+	</script>
+</head>
+<body onload="startTime()">
+	<div id="header"><div class="background"></div><div class="mask"></div>
+		<a id="huntsville" href="huntsville.html" class="citybutton" style="left:0;"><h4>Huntsville</h4></a>
+		<a id="auburn" href="auburn.html" class="citybutton" style="left:120px;"><h4>Auburn</h4></a>
+		<h2 id="date"></h2>
+		<span id="dark"></span>
+		<h1 id="time"></h1>
+		                      
+	</div>		 
+				<div id="columnone" class="column">
+					<div class="card" style="height:500px;"><div class="background"></div><div class="mask"></div>
+						<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
+						<div id="weather">							
+						</div>
+					</div>		
+				</div>			
+				<div id="columntwo" class="column">
+					<div class="card"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">National News</h4>
+						<hr id="cardline">
+						<div id="cardcontent" style="margin-left:-15px;">
+							<script language="JavaScript" src="http://feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FdomesticNews&num=8&targ=y&utf=y&html=y"  charset="UTF-8" type="text/javascript">
+							</script>
+						</div>
+					</div>
+					
+					<div class="card"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Huntsville News</h4>
+						<hr id="cardline">
+						<div id="cardcontent" style="margin-left:-15px;">
+							<script language="JavaScript" src="http://www.feedroll.com/rssviewer/feed2js.php?src=http%3A%2F%2Fblog.al.com%2Fnews_huntsville_impact%2Fatom.xml&num=6&targ=y&utf=y"  charset="UTF-8" type="text/javascript"></script>
+						</div>
+					</div>
+				</div>
+				<div id="columnthree" class="column">
+					
+					<div class="tilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Google</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="https://inbox.google.com/"><!------------------------------Inbox---->	
+									<article class="small" id="topleft" style="background-color:#ffffff;padding:20px;">
+									<img src="images/inbox.png" style="width:100%;"></article></a>
+							<article class="small" id="topright">
+									<a target="_blank" href="https://www.google.com/calendar/render?li=1"><!--------Google Calendar---->	
+										<article class="extrasmall" id="topright"style="background-color:#ffffff;padding:5px;">
+										<img src="images/calender.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="https://drive.google.com/#my-drive"><!-------------------------------Drive---->	
+										<article class="extrasmall" id="topleft" style="background-color:#ffffff;padding:10px;">
+										<img src="images/drive.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="https://www.google.com/maps"><!-------------------------------Google Maps-->	
+										<article class="extrasmall" id="bottomleft" style="background-color:#ffffff;padding:5px;">
+										<img src="images/googlemaps.gif" style="height:100%;"></article></a>
+									<a target="_blank" href="http://www.youtube.com/"><!--------------------------------Youtube---->		
+										<article class="extrasmall" id="bottomright" style="background-color:#ffffff;padding:5px;">
+										<img src="images/youtube.gif" style="height:100%;"></article></a>
+								</article>
+						
+						</div>
+					</div>
+					<div class="doubletilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">University</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="http://www.auburn.edu/"><!------------------------------------Auburn---->	
+										<article class="small" id="topleft" style="background-color:#0C2340;padding:10px;">
+										<img src="images/auburn.gif" style="width:80%;margin-top:10px;margin-left:10px;"></article></a>
+							<article class="small" id="topright">
+								<a target="_blank" href="http://www.auburn.edu/academic/provost/undergrad_studies/honors-college//"><!---Honors College------>	
+										<article class="extrasmall" id="topleft" style="background-color:#0C2340;">
+										<img src="images/caterhall.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="http://eng.auburn.edu/"><!---------------------Engineering------->		
+										<article class="extrasmall" id="topright" style="background-color:#0C2340;padding:0px;">
+										<img src="images/engineering.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="http://www.auburntigers.com/"><!-----------------------------------Football Team-->	
+											<article class="extrasmall" id="bottomleft" style="background-color:#0C2340;padding:10px;">
+										<img src="images/auburnlogo.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="http://eng.auburn.edu/programs/ece/index.html"><!----Electrical Engineering---->	
+										<article class="extrasmall" id="bottomright" style="background-color:#0C2340;padding:10px;">
+										<img src="images/auburnelectrical.gif" style="width:100%;"></article></a>
+							</article>
+							<article class="small" id="bottomleft">
+								<a target="_blank" href="http://sparc-auburn.github.io/" ><!-------SPaRC--->		
+										<article class="extrasmall" id="topleft" style="background-color:#0C2340;padding:10px;">
+										<img src="images/sparcA.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="http://www.auburn.edu/oit/"><!----------------------------------------IT------->	
+										<article class="extrasmall" id="topright" style="background-color:#0C2340;padding:5px;">
+										<img src="images/auburnoaks.gif" style="width:100%;"></article></a>							
+								<a target="_blank" href="http://auburn.transloc.com/"><!--------------------Auburn Transit-->	
+										<article class="extrasmall" id="bottomleft" style="background-color:#0C2340;padding:10px;">
+										<img src="images/auburntransit.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="http://www.dineoncampus.com/auburn/show.cfm?cmd=menus2"><!-----------Auburn Dining-->	
+										<article class="extrasmall" id="bottomright" style="background-color:#0C2340;padding:10px;">
+										<img src="images/auburndining.gif" style="width:100%;"></article></a>
+							</article>					
+								<a target="_blank" href="https://authenticate.auburn.edu/cas/login?service=https%3A%2F%2Fauaccess.auburn.edu%2Fc%2Fportal%2Flogin"><!------------------Auburn Access-->	
+									<article class="small" id="bottomright" style="background-color:#0C2340;padding:10px;">								
+									<img src="images/auburnwareagle.gif" style="width:100%;"></article></a>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div id="columnfour" class="column">
+					<div class="doubletilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Study</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="https://myhomeworkapp.com/home" ><!---------------------My Study Life--->	
+								<article class="small" id="bottomright">
+								<img src="images/myhomework.jpg" style="width:100%;"></article></a>	
+							<article class="small" id="topright">
+								<a target="_blank" href="http://quizlet.com/your-sets"><!----------------------Quizlet------->	
+										<article class="extrasmall" id="topleft">
+										<img src="images/quizlet.jpg" style="width:100%;"></article></a>
+								<a target="_blank" href="http://www.sparknotes.com/"><!----------------------Sparknotes------->		
+										<article class="extrasmall" id="topright" style="background-color:#dddddd;padding:10px;">
+										<img src="images/sparknotes.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="https://www.webassign.net/login.html"><!--------------------Web Assign---->	
+										<article class="extrasmall" id="bottomleft" style="background-color:#e51c23;padding:5px;">
+										<img src="images/webassign.gif" style="height:100%;"></article></a>
+								<a target="_blank" href="http://www.symbolab.com/"><!---------Symbolab-->	
+											<article class="extrasmall" id="bottomright" style="background-color:#e51c23;padding:10px;">
+											<h5 style="text-align:center;margin-top:5px;font-size: 34px;color:white;">Sy</h5></article></a>
+							</article>
+							<article class="small" id="bottomleft">
+									<a target="_blank" href="https://www.khanacademy.org/library"><!------------------Khan Academy----->	
+										<article class="extrasmall" id="topleft" style="background-color:#87bf31;padding:10px;">
+										<img src="images/khan.gif" style="height:100%;"></article></a>
+									
+									<a target="_blank" href="http://www.wolframalpha.com/"><!------------------------Wolfram----->		
+											<article class="extrasmall" id="topright" style="background-color:#ff6d00;padding:10px;">
+											<img src="images/wolfram.gif" style="height:100%;"></article></a>
+									<a target="_blank" href="https://www.coursera.org/"><!------------------Coursera---->		
+											<article class="extrasmall" id="bottomleft" style="background-color:#3f729b;padding:10px;">
+											<img src="images/coursera.gif" style="height:100%;"></article></a>
+									<a target="_blank" href="http://www.chegg.com/"><!-----------------------Chegg----->		
+											<article class="extrasmall" id="bottomright" style="background-color:#ff6d00;padding:5px;">
+											<img src="images/chegg.gif" style="height:100%;"></article></a>
+							</article>	
+							<a target="_blank" href="https://auburn.instructure.com/"><!----------------------------------------Canvas---->	
+								<article class="small" id="topleft" style="background-color:#0C2340;padding:20px;">
+								<img src="images/canvas.gif" style="width:100%;"></article></a>
+						</div>
+						
+					</div>
+				
+				
+				
+				
+					<div class="tilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Social</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="http://www.facebook.com/"><!----------------------------Facebook----->		
+								<article class="small" id="topleft" style="background-color:#1e498b;">
+								<img src="images/facebook.gif" style="width:99%;"></article></a>
+							<article class="small" id="topright">
+									<a target="_blank" href="http://www.instagram.com/"><!--------------------------Instagram------>	
+											<article class="extrasmall" id="topleft" style="background-color:#3f729b;padding:5px;">
+											<img src="images/instagram.gif" style="width:100%"></article></a>
+									<a target="_blank" href="http://www.pinterest.com/"><!-----------------Pinterest----->
+											<article class="extrasmall" id="topright" style="background-color:#e51c23;padding:15px;">
+											<img src="images/pinterest.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="https://twitter.com/"><!---------------------Twitter--->
+											<article class="extrasmall" id="bottomleft" style="background-color:#5ea9dd;padding:15px;">
+											<img src="images/twitter.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="https://app.groupme.com/chats"><!-----------------------Group Me--->
+											<article class="extrasmall" id="bottomright" style="background-color:#0fb9f8;padding:15px;">
+											<img src="images/groupme.gif" style="width:100%;"></article></a>
+									
+							</article>
+						</div>
+					</div>
+				
+		
+					
+				</div>
+				<div id="columnfive" class="column">
+					<div class="doubletilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Utilities</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="https://www.evernote.com/Home.action#st=p&n=6ac69048-0e91-4862-a69a-d2397516a2ae"><!--------------------------------Evernote--->		
+								<article class="small" id="topleft" style="background-color:#87bf31;padding:10px;">
+								<img src="images/evernote.png" style="height:110%;top:-10px;position:relative;"></article></a>
+							<article class="small" id="topright">
+								<a target="_blank" href="https://www.bible.com/moments"><!----------------------Bible------->	
+										<article class="extrasmall" id="topleft" style="background-color:#000000;padding:10px;">
+										<img src="images/bible.png" style="width:100%;"></article></a>
+								<a target="_blank" href="https://www.instapaper.com/"><!------------------------------------Instapaper---->	
+										<article class="extrasmall" id="topright" >
+										<img src="images/instapaper.png" style="width:100%;"></article></a>
+								<a target="_blank" href="https://read.amazon.com/"><!------------------------------------------Kindle---->		
+										<article class="extrasmall" id="bottomleft">
+										<img src="images/kindle.jpg" style="height:100%;"></article></a>
+								<a target="_blank" href="http://issuu.com/home"><!---------------------------------------Pixlr---->	
+											<article class="extrasmall" id="bottomright" style="background-color:#212121;padding:10px;">
+											<img src="images/issuu.gif" style="width:100%;"></article></a>
+							</article>
+							<article class="small" id="bottomleft">
+								<a target="_blank" href="https://www.icloud.com/" ><!------------------------------------------icloud---->		
+										<article class="extrasmall" id="topleft" style="background-color:#555555;padding:15px;">
+										<img src="images/apple.png" style="position:relative;left:5px;height:95%;"></article></a>
+								<a target="_blank" href="https://onedrive.live.com/"><!----------------------------------------One Drive------->	
+									<article class="extrasmall" id="topright" style="background-color:#1e498b;padding:10px;">
+									<img src="images/skydrive.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="https://cloud.feedly.com/#my"><!------------------------Feedly--->	
+										<article class="extrasmall" id="bottomleft" style="background-color:#87bf31;padding:10px;">
+										<img src="images/feedly.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="https://flipboard.com/following"><!--------------------------------------Flipboard-->	
+											<article class="extrasmall" id="bottomright" style="background-color:#e51c23;">
+											<img src="images/flipboard.gif" style="width:100%;"></article></a>
+							</article>					
+							<a target="_blank" href="http://www.wunderground.com/weather-forecast/zmw:36831.1.99999"><!-----------------------Weather Underground-->	
+								<article class="small" id="bottomright" style="background-color:#212121;padding:10px;">
+								
+								<img src="images/weatherunderground.png" style="margin-top:15px;width:100%;"></article></a>
+						</div>
+				</div>
+					
+					<div class="tilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Making</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="http://www.codecademy.com/learn"><!--------------------------Codecademy---->	
+									<article class="small" id="topleft" style="background-color:#3f729b;padding:15px;">
+									<img src="images/codecademy.gif" style="width:100%;"></article></a>
+							<article class="small" id="topright">
+									<a target="_blank" href="https://123d.circuits.io/"><!-------123D Circuits---->	
+										<article class="extrasmall" id="topleft"style="background-color:#dddddd;padding:0px;">
+										<img src="images/autodesk.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="http://www.adafruit.com/"><!-------------------Adafruit--->	
+										<article class="extrasmall" id="topright" style="background-color:#000000;padding:10px;">
+										<img src="images/adafruit.gif" style="width:100%;"></article></a>
+									<a target="_blank" href="http://makezine.com/"><!----------------------Make Magazine------>	
+										<article class="extrasmall" id="bottomleft" style="background-color:#ffffff;padding:5px;">
+										<img src="images/make.gif" style="height:100%;"></article></a>
+									<a target="_blank" href="http://www.programiz.com/"><!------------------------Programiz--->		
+										<article class="extrasmall" id="bottomright" style="background-color:#ff6d00;padding:10px;">
+										<img src="images/programming.gif" style="height:100%;"></article></a>
+								</article>
+						</div>
+					</div>
+				</div>
+				<div id="columnsix" class="column">
+					<div class="doubletilecard"><div class="background"></div><div class="mask"></div>
+						<h4 id="cardheader">Media</h4>
+						<hr id="cardline">
+						<div id="cardcontent">
+							<a target="_blank" href="http://www.pandora.com/"><!--------------------------Pandora----->	
+								<article class="small" id="topleft">
+								<img src="images/pandora.jpg" style="width:100%"></article></a>
+							
+							<article class="small" id="topright">
+								<a target="_blank" href="https://play.spotify.com/radio/track/4G8gkOterJn0Ywt6uhqbhp"  ><!--------------------Spotify------->	
+										<article class="extrasmall" id="topleft" style="background-color:#000000;padding:10px;">
+										<img src="images/spotify.gif" style="width:100%;"></article></a>
+								<a target="_blank" href="https://www.musixmatch.com/"><!-------------------MusixMatch------->		
+										<article class="extrasmall" id="topright">
+										<img src="images/musixmatch.png" style="width:100%;"></article></a>
+								<a target="_blank" href="http://www.magisto.com/video/upload"><!------------------------Magisto---->	
+										<article class="extrasmall" id="bottomleft">
+										<img src="images/magisto1.png" style="height:100%;"></article></a>
+								<a target="_blank" href="https://vimeo.com/"><!------------------Vimeo------->		
+										<article class="extrasmall" id="bottomright"style="background-color:#0fb9f8;padding:10px;">
+										<img src="images/vimeo.gif" style="width:100%;"></article></a>
+							</article>
+							<article class="small" id="bottomleft">
+								<a target="_blank" href="https://v2.polarr.co/#" ><!-----------------------------------------Polarr---->		
+										<article class="extrasmall" id="topleft" style="background-color:#212121;padding:5px;">
+										<img src="images/polarr.png" style="height:100%;"></article></a>
+								<a target="_blank" href="http://pixlr.com/editor/"><!---------------------------------------Pixlr---->	
+											<article class="extrasmall" id="topright" style="background-color:#68cbed;">
+											<img src="images/pixlr.png" style="width:100%;"></article></a>
+								<a target="_blank" href="https://www.flickr.com/"><!-----------------------Flickr--->	
+										<article class="extrasmall" id="bottomleft" style="background-color:#212121;padding:5px;">
+										<img src="images/flickr.gif" style="width:100%;"></article></a>
+								
+							</article>					
+							<a target="_blank" href="https://photos.google.com/"><!-------------------Google Photos-->	
+								<article class="small" id="bottomright" style="background-color:#ffffff;padding:15px;">
+								
+								<img src="images/photos.gif" style="width:100%;"></article></a>
+						</div>
+					</div>
+					
+				</div>
+			
+	 
+		 
+</body>
+</html>
