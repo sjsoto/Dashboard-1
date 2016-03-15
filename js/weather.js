@@ -2,38 +2,38 @@
 $(document).ready(function() {
 
   $.simpleWeather({
-    woeid: '', //2357536	
-    location: 'Huntsville,AL',    
+    woeid: '', //2357536
+    location: 'Huntsville,AL',
     unit: 'f',
-	
+
     success: function(weather) {
-	
+
 	var d = new Date();
 	var n = d.getHours();
 	var timeofday = "d";
 	if (n >= 19 || n < 6)
 		timeofday = "n";
-	else 
+	else
 		timeofday = "d";
-	
+
 
 	var background = setbackground(timeofday,weather.code);
 	var middle = setmiddle(weather.code);
 	var precip = setprecip(weather.code);
-    html = '<h4 id="cardheader">Current Weather - '+weather.city+'</h4><hr id="cardline">';
+  html = '<h4 id="cardheader">Current Weather - '+weather.city+'</h4><hr id="cardline">';
 	html += '<img id="largeweather" style="z-index:201;" src="images/weather/'+background+'" >';
 	html +='<img id="largeweather" style="z-index:202;" src="images/weather/'+middle+'" >';
 	html +='<img id="largeweather" style="z-index:203;" src="images/weather/'+precip+'" >';
 	html += '<h3 style="position:absolute;top:-80px;right:15px;font-size:112px;">'+weather.temp+'&deg;</h4>';
 	var timestamp = moment(weather.updated);
-    html += '<p style="position:absolute;top:280px;right:15px;">Updated at '+moment(timestamp).format('h:mma')+'</p>';	
-    html += '<span style="width:140px;position:absolute;top:110px;right:35px;"><h5 style="text-align:center;">'+weather.currently+'</h5></span>  <hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;height:1px;width:95%;">          <hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;left:200px;height:185px;width:1px;">																				<hr style="border: 0;position:absolute;color:color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;left:300px;height:185px;width:1px;">																				<hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:400px;left:200px;height:1px;width:50%;">';
-	
+  html += '<p style="position:absolute;top:280px;right:15px;">Updated at '+moment(timestamp).format('h:mma')+'</p>';
+  html += '<span style="width:140px;position:absolute;top:110px;right:35px;"><h5 style="text-align:center;">'+weather.currently+'</h5></span>  <hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;height:1px;width:95%;">          <hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;left:200px;height:185px;width:1px;">																				<hr style="border: 0;position:absolute;color:color: rgb(230,230,230);background-color: rgb(230,230,230);top:305px;left:300px;height:185px;width:1px;">																				<hr style="border: 0;position:absolute;color: rgb(230,230,230);background-color: rgb(230,230,230);top:400px;left:200px;height:1px;width:50%;">';
+
 	html += '<img src="images/weather/fairsun.gif" style="width:35px;position:absolute;top:200px;left:15px;">'
 	html += '<span style="position:absolute;top:170px;left:60px;"><h6 style="text-align:left;">'+weather.sunrise+'</h6></span>';
 	html += '<img src="images/weather/fairmoon.gif" style="width:35px;position:absolute;top:245px;left:15px;">'
 	html += '<span style="position:absolute;top:215px;left:60px;"><h6 style="text-align:left;">'+weather.sunset+'</h6></span>';
-	
+
 	var barometer = "Steady";
 	var barimg = "barometer-steady.gif";
 	if (weather.rising==1)
@@ -65,7 +65,7 @@ $(document).ready(function() {
 	html += '<span style="width:140px;position:absolute;top:400px;left:15px;"><h5 style="text-align:center;">'+weather.forecast[0].text+'</h5></span>';
 	html += '<div id="highlow" style="left:115px;"><h2 style="position:absolute;left:5px;color:#e51c23;font-size:36px;font-weight:bold;">'+weather.high+'&deg;</h2>';
 	html += '<h2 style="position:absolute;top:55px;left:5px;color:#5492f7;font-size:36px;font-weight:bold;margin-top:10px;">'+weather.low+'&deg;</h2></div>';
-	
+
 	html += '<span style="position:absolute;top:280px;left:205px;"><h6 style="text-align:left;">'+weather.forecast[1].day+'</h6></span>';
 	background = setbackground("d",weather.forecast[1].code);
     middle = setmiddle(weather.forecast[1].code);
@@ -76,7 +76,7 @@ $(document).ready(function() {
 	html += '<div style="position:absolute;top:300px;left:265px;">';
 	html += '<h6 style="position:absolute;color:#e51c23;font-size:20px;">'+weather.forecast[1].high+'&deg;</h6>';
 	html += '<h6 style="position:absolute;top:55px;color:#5492f7;margin-top:10px;font-size: 20px; ">'+weather.forecast[1].low+'&deg;</h6></div>';
-	
+
 	html += '<span style="position:absolute;top:280px;left:305px;"><h6 style="text-align:left;">'+weather.forecast[2].day+'</h6></span>';
 	background = setbackground("d",weather.forecast[2].code);
     middle = setmiddle(weather.forecast[2].code);
@@ -87,7 +87,7 @@ $(document).ready(function() {
 	html += '<div style="position:absolute;top:300px;left:365px;">';
 	html += '<h6 style="position:absolute;color:#e51c23;font-size:20px;">'+weather.forecast[2].high+'&deg;</h6>';
 	html += '<h6 style="position:absolute;top:55px;color:#5492f7;margin-top:10px;font-size: 20px; ">'+weather.forecast[2].low+'&deg;</h6></div>';
-	
+
 	html += '<span style="position:absolute;top:370px;left:205px;"><h6 style="text-align:left;">'+weather.forecast[3].day+'</h6></span>';
 	background = setbackground("d",weather.forecast[3].code);
     middle = setmiddle(weather.forecast[3].code);
@@ -98,7 +98,7 @@ $(document).ready(function() {
 	html += '<div style="position:absolute;top:380px;left:265px;">';
 	html += '<h6 style="position:absolute;color:#e51c23;font-size:20px;">'+weather.forecast[3].high+'&deg;</h6>';
 	html += '<h6 style="position:absolute;top:55px;color:#5492f7;margin-top:10px;font-size: 20px; ">'+weather.forecast[3].low+'&deg;</h6></div>';
-	
+
 	html += '<span style="position:absolute;top:370px;left:305px;"><h6 style="text-align:left;">'+weather.forecast[4].day+'</h6></span>';
 	background = setbackground("d",weather.forecast[4].code);
     middle = setmiddle(weather.forecast[4].code);
@@ -109,8 +109,8 @@ $(document).ready(function() {
 	html += '<div style="position:absolute;top:380px;left:365px;">';
 	html += '<h6 style="position:absolute;color:#e51c23;font-size:20px;">'+weather.forecast[3].high+'&deg;</h6>';
 	html += '<h6 style="position:absolute;top:55px;color:#5492f7;margin-top:10px;font-size: 20px; ">'+weather.forecast[4].low+'&deg;</h6></div>';
-     
-  
+
+
       $("#weather").html(html);
     },
     error: function(error) {
@@ -124,7 +124,7 @@ function setbackground(t,c)
 		{
 			if	(t=="d")
 				return "fairsun.gif";
-			else 
+			else
 				return "fairmoon.gif";
 		}
 		else if (c==3||c==4||c==11||c==12||(c>=15&&c<=17)||(c>=26&&c<=28)||(c>=41&&c<=46))// -------------------------upper cloudy------------------------
@@ -133,7 +133,7 @@ function setbackground(t,c)
 		{
 			if	(t=="d")
 				return "cloudsun.gif";
-			else 
+			else
 				return "cloudmoon.gif";
 		}
 		else if (c == 0) // ------------------------------------tornado------------------------
